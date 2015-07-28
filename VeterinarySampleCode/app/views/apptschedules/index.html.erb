@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Apptschedules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date of visit</th>
+      <th>Pet name</th>
+      <th>Customer</th>
+      <th>Reminder flag</th>
+      <th>Visit reason</th>
+      <th>Doctor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apptschedules.each do |apptschedule| %>
+      <tr>
+        <td><%= apptschedule.date_of_visit %></td>
+        <td><%= apptschedule.pet_name %></td>
+        <td><%= apptschedule.customer %></td>
+        <td><%= apptschedule.reminder_flag %></td>
+        <td><%= apptschedule.visit_reason %></td>
+        <td><%= apptschedule.doctor %></td>
+        <td><%= link_to 'Show', apptschedule %></td>
+        <td><%= link_to 'Edit', edit_apptschedule_path(apptschedule) %></td>
+        <td><%= link_to 'Destroy', apptschedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apptschedule', new_apptschedule_path %>

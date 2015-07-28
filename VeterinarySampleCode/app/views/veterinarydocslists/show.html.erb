@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @veterinarydocslist.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @veterinarydocslist.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @veterinarydocslist.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @veterinarydocslist.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @veterinarydocslist.zip %>
+</p>
+
+<p>
+  <strong>School degree recvd:</strong>
+  <%= @veterinarydocslist.school_degree_recvd %>
+</p>
+
+<p>
+  <strong>Years in practice:</strong>
+  <%= @veterinarydocslist.years_in_practice %>
+</p>
+
+<%= link_to 'Edit', edit_veterinarydocslist_path(@veterinarydocslist) %> |
+<%= link_to 'Back', veterinarydocslists_path %>

@@ -1,0 +1,55 @@
+<%= form_for(@apptschedule) do |f| %>
+  <% if @apptschedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apptschedule.errors.count, "error") %> prohibited this apptschedule from being saved:</h2>
+
+      <ul>
+      <% @apptschedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- we can also use formtastic for customizing the layout -->
+<table> 
+  <tr>
+    <td><%= f.label :date_of_visit %></td>
+    <td>&nbsp;</td>
+    <td><%= f.date_select :date_of_visit %></td>
+  </tr> 
+  <tr>
+    <td><%= f.label :pet_name %></td>
+    <td>&nbsp;</td>
+    <td><%= f.text_field :pet_name %></td>
+  </tr>  
+  <tr>
+    <td><%= f.label :customer %></td>
+    <td>&nbsp;</td>
+    <td><%= f.text_field :customer %></td>
+  </tr> 
+  <tr>
+    <td><%= f.label :reminder_flag %></td>
+    <td>&nbsp;</td>
+    <td><%= f.check_box :reminder_flag %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :visit_reason %></td>
+    <td>&nbsp;</td>
+    <td><%= f.text_field :visit_reason %></td>
+  </tr> 
+  <tr>
+    <td><%= f.label :doctor %></td>
+    <td>&nbsp;</td>
+    <td><%= select_tag "count", "<option>Victor</option><option>Bob</option><option>Susan</option>".html_safe%></td>
+  </tr> 
+  <tr>
+   <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center"><%= f.submit %></td>
+  </tr> 
+  <tr>
+   <td colspan="3">&nbsp;</td>
+  </tr>
+</table>
+<% end %>

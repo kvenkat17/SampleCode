@@ -1,0 +1,49 @@
+<%= form_for(@veterinarydocslist) do |f| %>
+  <% if @veterinarydocslist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@veterinarydocslist.errors.count, "error") %> prohibited this veterinarydocslist from being saved:</h2>
+
+      <ul>
+      <% @veterinarydocslist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td><%= f.label :name %></td> <td>&nbsp;</td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :address %> </td> <td>&nbsp;</td>
+      <td><%= f.text_field :address %></td>
+    </tr> 
+    <tr>
+      <td><%= f.label :city %></td> <td>&nbsp;</td>
+      <td><%= f.text_field :city %></td>
+    </tr> 
+    <tr>
+      <td><%= f.label :state %></td> <td>&nbsp;</td>
+      <td><%= f.text_field :state %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :zip %></td> <td>&nbsp;</td>
+      <td><%= f.text_field :zip %></td>
+    </tr> 
+    <tr>
+      <td><%= f.label :school_degree_recvd %></td> <td>&nbsp;</td>
+      <td><%= f.text_field :school_degree_recvd %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :years_in_practice %></td> <td>&nbsp;</td>
+      <td><%= f.number_field :years_in_practice %></td>
+    </tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr>
+      <td colspan="3" align="center"><%= f.submit %></td> 
+    </tr>
+    <tr><td colspan="3">&nbsp;</td></tr> 
+  </table>
+<% end %>

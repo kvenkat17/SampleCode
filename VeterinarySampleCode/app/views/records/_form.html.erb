@@ -1,0 +1,54 @@
+<%= form_for(@record) do |f| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% @record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table>
+  <tr>
+    <td><%= f.label :pet_name %></td>
+    <td>&nbsp;</td>
+    <td><%= f.text_field :pet_name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :type_of_pet %></td>
+    <td>&nbsp;</td>
+    <td><%= f.text_field :type_of_pet %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :breed %></td>
+    <td>&nbsp;</td>
+    <td><%= f.text_field :breed %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :age %></td>
+    <td>&nbsp;</td>
+    <td><%= f.number_field :age %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :weight %></td>
+    <td>&nbsp;</td>
+    <td><%= f.number_field :weight %></td>
+  </tr> 
+  <tr>
+    <td><%= f.label :last_visit_date %></td>
+    <td>&nbsp;</td>
+    <td><%= f.date_select :last_visit_date %></td>
+  </tr> 
+  <tr>
+    <td colspan="3">&nbsp;</td> 
+  </tr> 
+  <tr>
+    <td colspan="3" align="center"><%= f.submit %></td> 
+  </tr>
+  <tr>
+    <td colspan="3">&nbsp;</td> 
+  </tr>
+  </table>
+<% end %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Veterinary Doctors List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>School degree recvd</th>
+      <th>Years in practice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @veterinarydocslists.each do |veterinarydocslist| %>
+      <tr>
+        <td><%= veterinarydocslist.name %></td>
+        <td><%= veterinarydocslist.address %></td>
+        <td><%= veterinarydocslist.city %></td>
+        <td><%= veterinarydocslist.state %></td>
+        <td><%= veterinarydocslist.zip %></td>
+        <td><%= veterinarydocslist.school_degree_recvd %></td>
+        <td><%= veterinarydocslist.years_in_practice %></td>
+        <td><%= link_to 'Show', veterinarydocslist %></td>
+        <td><%= link_to 'Edit', edit_veterinarydocslist_path(veterinarydocslist) %></td>
+        <td><%= link_to 'Destroy', veterinarydocslist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Veterinary Doctor', new_veterinarydocslist_path %>

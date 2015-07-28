@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of visit:</strong>
+  <%= @apptschedule.date_of_visit %>
+</p>
+
+<p>
+  <strong>Pet name:</strong>
+  <%= @apptschedule.pet_name %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @apptschedule.customer %>
+</p>
+
+<p>
+  <strong>Reminder flag:</strong>
+  <%= @apptschedule.reminder_flag %>
+</p>
+
+<p>
+  <strong>Visit reason:</strong>
+  <%= @apptschedule.visit_reason %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @apptschedule.doctor %>
+</p>
+
+<%= link_to 'Edit', edit_apptschedule_path(@apptschedule) %> |
+<%= link_to 'Back', apptschedules_path %>
